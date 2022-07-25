@@ -1,15 +1,24 @@
-import { Banner } from "./components/styles/Banner.styled";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Crew from "./pages/crew";
+import Destination from "./pages/destination";
+import Home from "./pages/home";
+import Technology from "./pages/technology";
+import Navbar from './components/Navbar';
 
 
 function App() {
   return (
     <>
-    <Banner>
+    
+    <Router>
       <Navbar />
-      <Hero />
-    </Banner>
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='technology' element={<Technology />} />
+        <Route path='crew' element={<Crew />} />
+        <Route path='destination' element={<Destination />} />
+      </Routes>
+    </Router>
     </>
   );
 }

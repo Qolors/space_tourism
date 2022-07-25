@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
+
 
 export const Navigations = styled.div`
     width: 70%;
@@ -14,7 +16,7 @@ export const Navigations = styled.div`
     padding-bottom: 2px;
 `
 
-export const ButtonNav = styled.div`
+export const NavLink = styled(Link)`
     background-color: transparent;
     display: flex;
     height: 100%;
@@ -24,6 +26,8 @@ export const ButtonNav = styled.div`
     align-items: center;
     font-size: 1em;
     gap: .5em;
+    z-index: 1;
+    text-decoration: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.0);
     &:hover {
         border-bottom: 2px solid white;

@@ -1,4 +1,4 @@
-import { Navigations, ButtonNav, NavBox, Logo } from "./styles/Navbar.styled"
+import { Navigations, NavLink, NavBox, Logo } from "./styles/Navbar.styled"
 import log from '../assets/shared/logo.svg'
 
 const Navbar = () => {
@@ -6,10 +6,10 @@ const Navbar = () => {
         <NavBox>
             <Logo src={log} alt="logo" />
             <Navigations>
-                <ButtonNav><strong>03</strong>HOME</ButtonNav>
-                <ButtonNav><strong>02</strong>DESTINATION</ButtonNav>
-                <ButtonNav><strong>01</strong>CREW</ButtonNav>
-                <ButtonNav><strong>00</strong>TECHNOLOGY</ButtonNav>
+                <NavLink to='/'><strong>03</strong>HOME</NavLink>
+                <NavLink to='/destination'><strong>02</strong>DESTINATION</NavLink>
+                <NavLink to='/crew'><strong>01</strong>CREW</NavLink>
+                <NavLink to='/technology'><strong>00</strong>TECHNOLOGY</NavLink>
             </Navigations>
         </NavBox>
 

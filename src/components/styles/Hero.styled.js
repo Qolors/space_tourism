@@ -42,17 +42,32 @@ export const Hero3 = styled.p`
 
 `
 
-const gradient = keyframes`
+const breathe = keyframes`
 
     0% {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        opacity: 0;
+        transform: scale(0.9);
+        backdrop-filter: blur(0px);
     }
+
+    25% {
+        backdrop-filter: blur(5px);
+    }
+
     50% {
-        background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        opacity: 0.5;
+        transform: scale(0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 3em rgba(135, 194, 237, 0.5);
     }
+
+    75% {
+        backdrop-filter: blur(0px);
+    }
+
     100% {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    }
+        opacity: 0;
+        backdrop-filter: blur(0px);
 }
 
 `
@@ -60,15 +75,15 @@ const gradient = keyframes`
 export const Enter = styled.div`
     height: 250px;
     width: 250px;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     text-align: center;
-    color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
-    animation: ${gradient} 2s infinite;
+    animation: ${breathe} 4s ease-out infinite normal;
     &:hover {
         cursor: pointer;
     }
