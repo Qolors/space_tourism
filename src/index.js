@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    font-family: 'Jura', sans-serif;
+    color: white;
   }
 
   html {

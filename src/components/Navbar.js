@@ -6,10 +6,10 @@ const Navbar = () => {
         <NavBox>
             <Logo src={log} alt="logo" />
             <Navigations>
-                <NavLink to='/'><strong>03</strong>HOME</NavLink>
-                <NavLink to='/destination'><strong>02</strong>DESTINATION</NavLink>
-                <NavLink to='/crew'><strong>01</strong>CREW</NavLink>
-                <NavLink to='/technology'><strong>00</strong>TECHNOLOGY</NavLink>
+                <NavLink to='/technology'><strong>02</strong>TECHNOLOGY</NavLink>
+                <NavLink to='/crew'><strong>03</strong>CREW</NavLink>
+                <NavLink to='/destination'><strong>01</strong>DESTINATION</NavLink>
+                <NavLink to='/'><strong>00</strong>HOME</NavLink>
             </Navigations>
         </NavBox>
 

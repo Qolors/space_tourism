@@ -14,18 +14,23 @@ export const Parent = styled.div`
     display: flex;
     margin: auto;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     gap: 1em;
+`
+
+export const Uncle = styled.div`
+    display: flex;
+    margin: auto;
+    flex-direction: column;
 `
 
 export const Child = styled.div`
     display: flex;
     width: 100%;
-    height: 100%;
     gap: 1em;
     justify-content: center;
     align-items: center;
-    maring-top: 4em;
+    maring-top: 200px;
 `
 
 export const StaticText = styled.div`
@@ -73,3 +78,28 @@ export const PlanetDesc = styled.p`
     line-height: 2em;
 `
 
+export const PlanetInfoBox = styled.div`
+    display: flex;
+    width: 100%;
+    border-top: 1px solid silver;
+    gap: 0.5em;
+    justify-content:
+`
+
+export const PlanetData = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5em;
+    margin-top: 1em;
+`
+
+export const InfoHead = styled.span`
+    font-size: 1em;
+    font-weight: thin;
+`
+export const InfoStat = styled.span`
+    font-size: 2em;
+    font-weight: bolder;
+`

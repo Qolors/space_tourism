@@ -14,6 +14,7 @@ export const Navigations = styled.div`
     padding-right: 4em;
     padding-left: 2em;
     padding-bottom: 2px;
+    gap: 1em;
 `
 
 export const NavLink = styled(Link)`

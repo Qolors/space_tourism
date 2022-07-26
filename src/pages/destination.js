@@ -1,14 +1,14 @@
-import { Page, Parent, Child, StaticText, StaticNumber, ImageContainer, PlanetDesc, PlanetName, PlanetNav } from "../components/styles/Destination.styled";
+import { Page, Parent, Child, StaticText, StaticNumber, ImageContainer, PlanetDesc, PlanetName, PlanetNav, PlanetInfoBox, PlanetData, InfoHead, InfoStat, Uncle } from "../components/styles/Destination.styled";
 import moon from '../assets/destination/image-moon.png'
 
 const Destination = () => {
     return (
         <Page>
             <Parent>
-                <StaticText><StaticNumber>02</StaticNumber>PICK YOUR DESTINATION</StaticText>
+                <StaticText><StaticNumber>01</StaticNumber>PICK YOUR DESTINATION</StaticText>
                 <Child>
                     <ImageContainer src={moon} />
-                    <Parent>
+                    <Uncle>
                         <PlanetNav>
                             <div>MOON</div>
                             <div>MARS</div>
@@ -21,9 +21,19 @@ const Destination = () => {
                             While you’re there, take in some history by visiting the Luna 2 and 
                             Apollo 11 landing sites.
                         </PlanetDesc>
+                        <PlanetInfoBox>
+                            <PlanetData>
+                                <InfoHead>AVG. DISTANCE</InfoHead>
+                                <InfoStat>384,000 KM</InfoStat>
+                            </PlanetData>
+                            <PlanetData>
+                                <InfoHead>EST. TRAVEL TIME</InfoHead>
+                                <InfoStat>3 DAYS</InfoStat>
+                            </PlanetData>
+                        </PlanetInfoBox>
 
                     
-                    </Parent>
+                    </Uncle>
 
                 </Child>
             </Parent>
