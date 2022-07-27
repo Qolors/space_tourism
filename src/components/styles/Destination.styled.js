@@ -75,6 +75,7 @@ export const PlanetDesc = styled.p`
     color: white;
     word-wrap: break-word;
     max-width: 50ch;
+    min-height: 150px;
     line-height: 2em;
 `
 

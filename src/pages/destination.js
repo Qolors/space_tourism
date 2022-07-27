@@ -56,10 +56,7 @@ const Destination = () => {
                                 <InfoStat>{planet.time}</InfoStat>
                             </PlanetData>
                         </PlanetInfoBox>
-
-                    
                     </Uncle>
-
                 </Child>
             </Parent>
 
