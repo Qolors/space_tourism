@@ -103,3 +103,15 @@ export const InfoStat = styled.span`
     font-size: 2em;
     font-weight: bolder;
 `
+export const Button = styled.button`
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    text-decoration: none;
+    font-size: 1em;
+    &:hover {
+        border-bottom: 2px solid silver;
+        cursor: pointer;
+    }
+`

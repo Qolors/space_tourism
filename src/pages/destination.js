@@ -1,34 +1,59 @@
-import { Page, Parent, Child, StaticText, StaticNumber, ImageContainer, PlanetDesc, PlanetName, PlanetNav, PlanetInfoBox, PlanetData, InfoHead, InfoStat, Uncle } from "../components/styles/Destination.styled";
+import { Page, Parent, Child, StaticText, StaticNumber, ImageContainer, PlanetDesc, PlanetName, PlanetNav, PlanetInfoBox, PlanetData, InfoHead, InfoStat, Uncle, Button } from "../components/styles/Destination.styled";
 import moon from '../assets/destination/image-moon.png'
+import mars from '../assets/destination/image-mars.png'
+import europa from '../assets/destination/image-europa.png';
+import titan from '../assets/destination/image-titan.png';
+import db from "../firebase.config";
+import { doc, getDoc } from "firebase/firestore";
+import { useState, useEffect } from "react";
 
 const Destination = () => {
+
+    const [img, setImg] = useState(moon)
+
+    const [Name, setName] = useState('MOON');
+
+    const [planet, setPlanet] = useState([]);
+
+    async function fetchData() {
+        const docRef = doc(db, 'planets', `${Name}`);
+        const docSnap = await getDoc(docRef);
+        setPlanet(docSnap.data());
+    }
+
+    useEffect( () => {
+        fetchData();
+    }, [Name]);
+
+    function onClick(negs, plans) {
+        setName(`${negs}`);
+        setImg(plans);
+    };
+    
+
     return (
         <Page>
             <Parent>
-                <StaticText><StaticNumber>01</StaticNumber>PICK YOUR DESTINATION</StaticText>
+                <StaticText><StaticNumber>01</StaticNumber>CHOOSE YOUR DESTINATION</StaticText>
                 <Child>
-                    <ImageContainer src={moon} />
+                    <ImageContainer src={img} />
                     <Uncle>
                         <PlanetNav>
-                            <div>MOON</div>
-                            <div>MARS</div>
-                            <div>EUROPA</div>
-                            <div>TITAN</div>
+                            <Button onClick={() => onClick('MOON', moon)}>MOON</Button>
+                            <Button onClick={() => onClick('MARS', mars)}>MARS</Button>
+                            <Button onClick={() => onClick('EUROPA', europa)}>EUROPA</Button>
+                            <Button onClick={() => onClick('TITAN', titan)}>TITAN</Button>
                         </PlanetNav>
-                        <PlanetName>MOON</PlanetName>
-                        <PlanetDesc>See our planet as you’ve never seen it before. A perfect 
-                            relaxing trip away to help regain perspective and come back refreshed. 
-                            While you’re there, take in some history by visiting the Luna 2 and 
-                            Apollo 11 landing sites.
-                        </PlanetDesc>
+                        <PlanetName>{Name}</PlanetName>
+                        <PlanetDesc>{planet.body}</PlanetDesc>
                         <PlanetInfoBox>
                             <PlanetData>
                                 <InfoHead>AVG. DISTANCE</InfoHead>
-                                <InfoStat>384,000 KM</InfoStat>
+                                <InfoStat>{planet.distance}</InfoStat>
                             </PlanetData>
                             <PlanetData>
                                 <InfoHead>EST. TRAVEL TIME</InfoHead>
-                                <InfoStat>3 DAYS</InfoStat>
+                                <InfoStat>{planet.time}</InfoStat>
                             </PlanetData>
                         </PlanetInfoBox>
 
