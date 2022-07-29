@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
+import { device } from './device';
 
 
 export const Navigations = styled.div`
@@ -15,6 +16,13 @@ export const Navigations = styled.div`
     padding-left: 2em;
     padding-bottom: 2px;
     gap: 1em;
+    @media ${device.mobile} {
+        padding: 0;
+        width: 80%;
+        height: 60%;
+        padding-right: 1em;
+        background-color: rgba(0, 0, 0, 0);
+    }
 `
 
 export const NavLink = styled(Link)`
@@ -29,9 +37,9 @@ export const NavLink = styled(Link)`
     gap: .5em;
     z-index: 1;
     text-decoration: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0);
     &:hover {
-        border-bottom: 2px solid white;
+        border-bottom: 1px solid white;
         transition: border .5s ease-in-out;
         cursor: pointer;
     }
@@ -49,6 +57,11 @@ export const NavBox = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 150px;
+    @media ${device.mobile} {
+        height: 75px;
+        gap: 1em;
+    }
+    
 `
 
 export const Logo = styled.img`
@@ -56,4 +69,9 @@ export const Logo = styled.img`
     height: 50px;
     object-fit: cover;
     padding-left: 4em;
+    @media ${device.mobile} {
+        width: 25px;
+        height: 25px;
+        padding-left: 1em;
+    }
 `

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import img from '../../assets/crew/background-crew-desktop.jpg'
+import img from '../../assets/crew/background-crew-desktop.jpg';
+import { device } from "./device";
 
 export const Page = styled.div`
     width: 100%;
@@ -11,36 +12,47 @@ export const Page = styled.div`
 `
 export const Parent = styled.div`
     display: flex;
+    flex-direction: column;
     margin: auto;
-    width: 80%;
-    gap: 1em;
-    height: 70%;
+    width: 70%;
     margin-bottom: 0;
+    @media ${device.mobile} {
+        align-items: center;
+        gap: 2em;
+    }
+    
 `
 
 
 export const Left = styled.div`
     display: flex;
-    margin: auto;
     flex-direction: column;
-    width: 100%;
-    gap: 0.5em;
     align-items: center;
-    height: 100%;
+    height: 80%;
+    gap: 1em;
 `
 
 export const ImageContainer = styled.img`
     display: flex;
-    height: 100%;
+    height: 70%;
+    max-height: 600px;
     margin-top: auto;
+    @media ${device.mobile} {
+        max-height: 400px;
+    }
 `
 
 export const Role = styled.h2`
     font-weight: bold;
-    opacity: 0.8;
+    opacity: 0.4;
     font-size: 2em;
     text-align: left;
     width: 100%;
+    margin: 0;
+    @media ${device.mobile} {
+        font-size: 1.5em;
+        text-align: center;
+    }
 
 `
 
@@ -49,12 +61,42 @@ export const Fullname = styled.h1`
     font-size: 3em;
     text-align: left;
     width: 100%;
+    margin: 0;
+    @media ${device.mobile} {
+        font-size: 2em;
+        text-align: center;
+    }
 `
 
 export const PersonDesc = styled.p`
     color: white;
     word-wrap: break-word;
     max-width: 50ch;
-    min-height: 150px;
+    min-height:250px;
     line-height: 2em;
+    margin-right: auto;
+    @media ${device.mobile} {
+        min-height: 100px;
+    }
+`
+
+export const CrewNav = styled.div`
+    display: inline-flex;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+    @media ${device.mobile} {
+        justify-content: center;
+    }
+
+`
+
+export const NavCircle = styled.button`
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    text-decoration: none;
+    border: none;
+    &:hover { cursor: pointer;}
 `

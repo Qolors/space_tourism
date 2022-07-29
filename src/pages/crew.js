@@ -1,23 +1,26 @@
-import { doc, getDoc } from "firebase/firestore";
-import { useState, useEffect } from "react";
-import db from "../firebase.config";
-import { Page, Parent, Left, ImageContainer, Role, Fullname, PersonDesc } from "../components/styles/Crew.styled";
-import mark from '../assets/crew/image-mark-shuttleworth.png';
+import { Page, Parent, Left, ImageContainer, Role, Fullname, PersonDesc, NavCircle, CrewNav } from "../components/styles/Crew.styled";
+import { StaticText, StaticNumber, Child } from "../components/styles/Destination.styled";
 
-const Crew = () => {
+const Crew = ({ props, onCrew }) => {
     return (
         <Page>
+            
             <Parent>
-                <Left>
-                    <Role>MISSION SPECIALIST</Role>
-                    <Fullname>MARK SHUTTLEWORTH</Fullname>
-                    <PersonDesc>Mark Richard Shuttleworth is the founder and CEO of Canonical, 
-                        the company behind the Linux-based Ubuntu operating system. 
-                        Shuttleworth became the first South African to travel to space as a space tourist.
-                    </PersonDesc>
-                </Left>
-                <ImageContainer src={mark} />
-
+                <StaticText><StaticNumber>02</StaticNumber>MEET YOUR CREW</StaticText>
+                <Child>
+                    <Left>
+                        <Role>{props.title}</Role>
+                        <Fullname>{props.name}</Fullname>
+                        <PersonDesc>{props.body}</PersonDesc>
+                        <CrewNav>
+                            <NavCircle onClick={() => onCrew('shuttleworth')}/>
+                            <NavCircle onClick={() => onCrew('glover')}/>
+                            <NavCircle onClick={() => onCrew('hurley')}/>
+                            <NavCircle onClick={() => onCrew('ansari')}/>
+                        </CrewNav>
+                    </Left>
+                    <ImageContainer src={props.image} />
+                </Child>
             </Parent>
         </Page>
     )

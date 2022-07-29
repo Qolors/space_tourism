@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import { device } from "./device";
 
 export const HeroBox = styled.div`
     display: flex;
     width: 75%;
     margin: auto;
     color: white;
+    flex-direction: row;
+
+    @media ${device.mobile} {
+        flex-direction: column;
+    }
 `
 
 export const HeroLeft = styled.div`
@@ -13,6 +19,10 @@ export const HeroLeft = styled.div`
     flex-direction: column;
     width: 100%;
     text-align: left;
+
+    @media ${device.mobile} {
+        align-items: center;
+    }
 
 `
 
@@ -25,11 +35,17 @@ export const HeroRight = styled.div`
 
 export const Hero1 = styled.span`
     font-size: 2em;
+    @media ${device.mobile} {
+        font-size: 1em;
+    }
 `
 
 export const Hero2 = styled.span`
     font-size: 8.5em;
     letter-spacing: .75rem;
+    @media ${device.mobile} {
+        font-size: 5em;
+    }
 `
 
 export const Hero3 = styled.p`

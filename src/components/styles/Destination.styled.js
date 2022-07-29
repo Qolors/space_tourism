@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import img from '../../assets/destination/background-destination-desktop.jpg'
+import { device } from "./device";
 
 export const Page = styled.div`
     width: 100%;
@@ -7,7 +8,6 @@ export const Page = styled.div`
     background: url(${img}) no-repeat center center fixed;
     background-size: cover;
     display: flex;
-
 `
 
 export const Parent = styled.div`
@@ -16,6 +16,10 @@ export const Parent = styled.div`
     flex-direction: column;
     width: 70%;
     gap: 1em;
+    @media ${device.mobile} {
+        margin-bottom: 1em;
+        
+    }
 `
 
 export const Uncle = styled.div`
@@ -27,10 +31,12 @@ export const Uncle = styled.div`
 export const Child = styled.div`
     display: flex;
     width: 100%;
+    height: 100%;
     gap: 1em;
-    justify-content: center;
     align-items: center;
-    maring-top: 200px;
+    @media ${device.mobile} {
+        flex-direction: column;
+    }
 `
 
 export const StaticText = styled.div`
@@ -40,12 +46,20 @@ export const StaticText = styled.div`
     font-size: 2em;
     font-weight: bold;
     color: white;
-
+    @media ${device.mobile} {
+        font-size: 1em;
+        text-align: center;
+        margin: 0;
+        justify-content: center;
+    }
 `
 
 export const StaticNumber = styled.span`
     opacity: 0.5;
     padding-right: 1em;
+    @media ${device.mobile} {
+        padding-left: 1em;
+    }
 `
 
 export const ImageContainer = styled.img`
@@ -57,6 +71,11 @@ export const ImageContainer = styled.img`
     max-width: 400px;
     padding: 1em;
     padding-right: 3em;
+    @media ${device.mobile} {
+        max-height: 200px;
+        padding-right: 1em;
+
+    }
 `
 
 export const PlanetNav = styled.div`
@@ -64,12 +83,22 @@ export const PlanetNav = styled.div`
     width: 100%;
     gap: 1em;
     color: white;
+    @media ${device.mobile} {
+        justify-content: center;
+    }
 `
 
 export const PlanetName = styled.h1`
     color: white;
     width: 100%;
     font-size: 2em;
+    @media ${device.mobile} {
+        text-align: center;
+        font-size: 3em;
+        padding: 0;
+        margin: 0;
+        margin-top: 1em;
+    }
 `
 export const PlanetDesc = styled.p`
     color: white;
@@ -84,7 +113,9 @@ export const PlanetInfoBox = styled.div`
     width: 100%;
     border-top: 1px solid silver;
     gap: 0.5em;
-    justify-content:
+    @media ${device.mobile} {
+        flex-direction: column;
+    }
 `
 
 export const PlanetData = styled.div`
@@ -94,6 +125,9 @@ export const PlanetData = styled.div`
     text-align: left;
     gap: 0.5em;
     margin-top: 1em;
+    @media ${device.mobile} {
+        align-items: center;
+    }
 `
 
 export const InfoHead = styled.span`
