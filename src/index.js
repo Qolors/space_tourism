@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Jura', sans-serif;
     color: white;
+    &::-webkit-scrollbar {
+      display: none;
+  }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
   }
 
   html {

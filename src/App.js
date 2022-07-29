@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import db from "./firebase.config";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import { AnimatePresence } from 'framer-motion';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
     const planetRef = doc(db, 'planets', `${pans}`);
     const planetSnap = await getDoc(planetRef);
     setPlanet(planetSnap.data());
+    
   }
 
   async function techData() {
@@ -69,12 +71,15 @@ function App() {
     
     <Router>
       <Navbar />
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='technology' element={<Technology props={techs} onTech={onTech}/>} />
-        <Route path='crew' element={<Crew props={crews} onCrew={onCrew} />} />
-        <Route path='destination' element={<Destination props={planets} Name={pans} onPlanet={onPlanet} />} />
-      </Routes>
+      <AnimatePresence>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='technology' element={<Technology props={techs} onTech={onTech}/>} />
+          <Route path='crew' element={<Crew props={crews} onCrew={onCrew} />} />
+          <Route path='destination' element={<Destination props={planets} Name={pans} onPlanet={onPlanet} />} />
+        </Routes>
+
+      </AnimatePresence>
     </Router>
     </>
   );

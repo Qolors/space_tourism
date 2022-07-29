@@ -4,10 +4,12 @@ import { device } from "./device";
 
 export const Page = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     background: url(${img}) no-repeat center center fixed;
     background-size: cover;
     display: flex;
+
 
 `
 export const Parent = styled.div`
@@ -16,11 +18,25 @@ export const Parent = styled.div`
     margin: auto;
     width: 70%;
     margin-bottom: 0;
+    align-items: center;
     @media ${device.mobile} {
         align-items: center;
         gap: 2em;
+        margin-top: 5em;
     }
     
+`
+
+export const Child = styled.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    @media ${device.mobile} {
+        flex-direction: column;
+    }
 `
 
 

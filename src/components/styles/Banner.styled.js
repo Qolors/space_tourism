@@ -8,7 +8,8 @@ export const Banner = styled.div`
     width: 100%;
     position: relative;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     background: url(${img}) no-repeat center center fixed;
     background-size: cover;
 `

@@ -43,6 +43,9 @@ export const NavLink = styled(Link)`
         transition: border .5s ease-in-out;
         cursor: pointer;
     }
+    @media ${device.mobile} {
+        z-index: 0;
+    }
 `
 
 /*MAIN PARENT */

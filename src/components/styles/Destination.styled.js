@@ -4,7 +4,8 @@ import { device } from "./device";
 
 export const Page = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     background: url(${img}) no-repeat center center fixed;
     background-size: cover;
     display: flex;
@@ -17,7 +18,7 @@ export const Parent = styled.div`
     width: 70%;
     gap: 1em;
     @media ${device.mobile} {
-        margin-bottom: 1em;
+        margin-top: 5em;
         
     }
 `
@@ -26,10 +27,12 @@ export const Uncle = styled.div`
     display: flex;
     margin: auto;
     flex-direction: column;
+    max-width: 50%;
 `
 
 export const Child = styled.div`
     display: flex;
+    flex-direction: flex-end;
     width: 100%;
     height: 100%;
     gap: 1em;

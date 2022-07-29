@@ -5,10 +5,15 @@ import { device } from "./device";
 
 export const Page = styled.div`
     width: 100%;
-    height: 100vh;
+    max-height: 100%;
+    min-height: 100vh;
     background: url(${img}) no-repeat center center fixed;
     background-size: cover;
     display: flex;
+    @media ${device.mobile} {
+        width: 100%;
+        margin-bottom: 0;
+    }
 
 `
 
@@ -20,7 +25,8 @@ export const Parent = styled.div`
     margin: auto;
     @media ${device.mobile} {
         width: 90%;
-        margin-bottom: 0;
+        margin-top: 5em;
+        margin-bottom: 1em;
     }
 `
 
@@ -96,9 +102,9 @@ export const TechImage = styled.img`
     display: flex;
     border-radius: 2em;
     width: 100%;
+    max-height: 500px;
     @media ${device.mobile} {
         border-radius: 0;
         aspect-ratio: 1 / 1;
-        max-height: 300px;
     }
 `
