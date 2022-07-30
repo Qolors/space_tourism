@@ -2,7 +2,7 @@
   "name": "space-tourism",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://qolors.github.io/space_tourism",
+  "homepage": ".",
   "dependencies": {
     "@mui/material": "^5.9.2",
     "@mui/styled-engine-sc": "^5.8.0",
