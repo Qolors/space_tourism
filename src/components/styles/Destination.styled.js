@@ -19,26 +19,31 @@ export const Parent = styled.div`
     gap: 1em;
     @media ${device.mobile} {
         margin-top: 5em;
-        
     }
 `
 
 export const Uncle = styled.div`
     display: flex;
     margin: auto;
+    margin-left: 2em;
     flex-direction: column;
-    max-width: 50%;
+    @media ${device.mobile} {
+        margin-left: auto;
+        
+    }
 `
 
 export const Child = styled.div`
     display: flex;
-    flex-direction: flex-end;
+    margin: auto;
     width: 100%;
     height: 100%;
-    gap: 1em;
+    gap: 5em;
+    justify-content: center;
     align-items: center;
     @media ${device.mobile} {
         flex-direction: column;
+        gap: 1em;
     }
 `
 
@@ -49,11 +54,17 @@ export const StaticText = styled.div`
     font-size: 2em;
     font-weight: bold;
     color: white;
+    position: fixed;
+    top: 5em;
+    left: 5em;
     @media ${device.mobile} {
-        font-size: 1em;
+        font-size: 1.25em;
         text-align: center;
-        margin: 0;
+        margin-top: auto;
         justify-content: center;
+        position: relative;
+        top: 0;
+        left: 0;
     }
 `
 
@@ -73,10 +84,9 @@ export const ImageContainer = styled.img`
     max-height: 400px;
     max-width: 400px;
     padding: 1em;
-    padding-right: 3em;
+    padding-right: 1em;
     @media ${device.mobile} {
         max-height: 200px;
-        padding-right: 1em;
 
     }
 `
@@ -109,6 +119,8 @@ export const PlanetDesc = styled.p`
     max-width: 50ch;
     min-height: 150px;
     line-height: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
 `
 
 export const PlanetInfoBox = styled.div`

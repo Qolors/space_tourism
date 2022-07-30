@@ -1,20 +1,26 @@
 import { Page, Parent, Child, StaticText, StaticNumber, ImageContainer, PlanetDesc, PlanetName, PlanetNav, PlanetInfoBox, PlanetData, InfoHead, InfoStat, Uncle, Button } from "../components/styles/Destination.styled";
 import { motion } from "framer-motion";
-const Destination = ({ props, Name, onPlanet, loading }) => {
+import moon from '../../src/assets/destination/image-moon.png';
+import mars from '../../src/assets/destination/image-mars.png';
+import europa from '../../src/assets/destination/image-europa.png';
+import titan from '../../src/assets/destination/image-titan.png';
+import Animated from "../components/Animated";
+
+const Destination = ({ props, Name, onPlanet, image }) => {
 
 
     return (
+        <Animated>
         <Page>
-            
             <Parent>
                 <StaticText><StaticNumber>01</StaticNumber>CHOOSE YOUR DESTINATION</StaticText>
                 <Child>
                     <ImageContainer 
                         as={motion.img}
-                        key={props.image}
-                        src={props.image}
+                        key={image}
+                        src={image}
                         initial={{ rotate: 15, x: 0, scale: 1.5, opacity: 0 }}
-                        animate={{ rotate: 0, x: 0, scale: .75, opacity: 1 }}
+                        animate={{ rotate: 0, x: 0, scale: 1, opacity: 1 }}
                         exit={{ x: 500, scale: 0.5, opacity: 0 }}
                         transition={{ duration: 2 }}
                     />
@@ -26,10 +32,10 @@ const Destination = ({ props, Name, onPlanet, loading }) => {
                         exit={{ x: -200, scale: 0.5, opacity: 0 }}
                         transition={{ duration: 2 }}>
                         <PlanetNav>
-                            <Button onClick={() => onPlanet('MOON')}>MOON</Button>
-                            <Button onClick={() => onPlanet('MARS')}>MARS</Button>
-                            <Button onClick={() => onPlanet('EUROPA')}>EUROPA</Button>
-                            <Button onClick={() => onPlanet('TITAN')}>TITAN</Button>
+                            <Button onClick={() => onPlanet('MOON', moon)}>MOON</Button>
+                            <Button onClick={() => onPlanet('MARS', mars)}>MARS</Button>
+                            <Button onClick={() => onPlanet('EUROPA', europa)}>EUROPA</Button>
+                            <Button onClick={() => onPlanet('TITAN', titan)}>TITAN</Button>
                         </PlanetNav>
                         <PlanetName>{Name}</PlanetName>
                         <PlanetDesc>{props.body}</PlanetDesc>
@@ -47,6 +53,7 @@ const Destination = ({ props, Name, onPlanet, loading }) => {
                 </Child>
             </Parent>
         </Page>
+        </Animated>
     )
 }
 

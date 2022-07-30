@@ -54,7 +54,8 @@ export const Hero3 = styled.p`
     max-width: 50ch;
     line-height: 2em;
     font-size: 1em;
-    font-weight: thin;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
 
 `
 
@@ -102,5 +103,6 @@ export const Enter = styled.div`
     animation: ${breathe} 4s ease-out infinite normal;
     &:hover {
         cursor: pointer;
+        opacity: 1.0;
     }
 `
