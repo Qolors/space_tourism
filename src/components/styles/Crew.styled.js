@@ -8,6 +8,8 @@ export const Page = styled.div`
     max-height: 100%;
     background: url(${img}) no-repeat center center fixed;
     background-size: cover;
+    top: 0;
+    left: 0;
     display: flex;
 
 
@@ -22,6 +24,8 @@ export const Parent = styled.div`
     @media ${device.mobile} {
         gap: 2em;
         justify-content: flex-end;
+        height: 100%;
+        padding-top: 5em;
     }
     
 `
@@ -68,9 +72,9 @@ export const ImageContainer = styled.img`
     margin-bottom: 0;
 
     @media ${device.mobile} {
-        height: 600px;
-        width: 100%;
-        margin-left: auto;
+        max-height: 50%;
+        margin: auto;
+        width: 50%;
     }
 `
 

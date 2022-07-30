@@ -15,7 +15,7 @@ const Hero = () => {
                 </Hero3>
             </HeroLeft>
             <HeroRight>
-                <Enter>EXPLORE</Enter>
+                <Enter to='/destination'>EXPLORE</Enter>
             </HeroRight>
         </HeroBox>
     )

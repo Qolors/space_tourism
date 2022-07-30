@@ -63,6 +63,7 @@ export const NavBox = styled.div`
     @media ${device.mobile} {
         height: 75px;
         gap: 1em;
+        justify-content: center;
     }
     
 `
@@ -76,5 +77,6 @@ export const Logo = styled.img`
         width: 25px;
         height: 25px;
         padding-left: 1em;
+        display: none;
     }
 `

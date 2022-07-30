@@ -25,8 +25,8 @@ export const Parent = styled.div`
     margin: auto;
     @media ${device.mobile} {
         width: 90%;
-        margin-top: 5em;
         margin-bottom: 1em;
+        margin-top: 5em;
     }
 `
 
@@ -96,12 +96,16 @@ export const TechInfo = styled.p`
     min-height: 250px;
     line-height: 2em;
     margin-right: auto;
+    @media ${device.mobile} {
+        min-width: 50ch;
+    }
 `
 
 export const TechImage = styled.img`
     display: flex;
     border-radius: 2em;
-    width: 100%;
+    width: 80%;
+    max-width: 400px;
     max-height: 500px;
     @media ${device.mobile} {
         border-radius: 0;

@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     font-family: 'Jura', sans-serif;
     color: white;
     &::-webkit-scrollbar {

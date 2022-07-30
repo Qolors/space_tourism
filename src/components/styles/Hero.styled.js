@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 import { device } from "./device";
+import { NavLink as Link } from 'react-router-dom';
 
 export const HeroBox = styled.div`
     display: flex;
-    width: 75%;
+    width: 70%;
     margin: auto;
     color: white;
     flex-direction: row;
 
     @media ${device.mobile} {
         flex-direction: column;
+        margin-top: 5em;
     }
 `
 
@@ -89,7 +91,7 @@ const breathe = keyframes`
 
 `
 
-export const Enter = styled.div`
+export const Enter = styled(Link)`
     height: 250px;
     width: 250px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -100,6 +102,7 @@ export const Enter = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
+    text-decoration: none;
     animation: ${breathe} 4s ease-out infinite normal;
     &:hover {
         cursor: pointer;
